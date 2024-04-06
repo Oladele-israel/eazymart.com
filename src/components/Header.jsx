@@ -6,6 +6,7 @@ import { FaCartShopping } from "react-icons/fa6";
 import { TiThMenu } from "react-icons/ti";
 import { useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
+import EazymartLogo from "./home-page component/EazymartLogo";
 
 const Header = () => {
   const [isToggle, setIsToggle] = useState(false);
@@ -13,21 +14,18 @@ const Header = () => {
     setIsToggle(!isToggle);
   };
   return (
-    <div className="w-full h-[20rem] ">
+    <div className="w-full h-[11rem] ">
       <header>
         <div className="w-[100%] flex flex-row bg-slate-50 p-3 justify-evenly ml-auto mr-auto">
-          <div className="flex items-center font-bold gap-1 text-2xl">
-            <FaCartShopping className="text-orange-600" />
-            <p className="text-[#575454] text-2xl">Easy.Mart</p>
-          </div>
+          <EazymartLogo />
           {/**this is the search bar */}
           <div className="flex items-center border-2 border-slate-300 rounded-lg w-[14rem] sm:w-[20rem] md:w-[20rem] p-2 justify-between">
             <input
               type="text"
               placeholder="search"
-              className="bg-transparent w-[70%]  "
+              className="bg-transparent w-[70%]border-none outline-none  "
             />
-            <FaSearch className="text-orange-600" />
+            <FaSearch className="text-orange-600 " />
           </div>
           {/**this is the account section */}
           <div className="flex items-center gap-1">
@@ -72,20 +70,24 @@ const Header = () => {
             isToggle ? "flex" : "hidden"
           } md:flex md:flex-row md:justify-evenly items-center capitalize font-semibold text-[#575454] text-[1.1rem]`}
         >
-          <li className="hover:bg-slate-400 w-full text-center p-2">
+          <li className="hover:bg-slate-400 md:hover:bg-white w-full text-center p-2">
             all categories
           </li>
-          <li className="hover:bg-slate-400 w-full text-center p-2">phones</li>
-          <li className="hover:bg-slate-400 w-full text-center p-2">
+          <li className="hover:bg-slate-400  md:hover:bg-white w-full text-center p-2">
+            phones
+          </li>
+          <li className="hover:bg-slate-400 md:hover:bg-white  w-full text-center p-2">
             clothing
           </li>
-          <li className="hover:bg-slate-400 w-full text-center p-2">
+          <li className="hover:bg-slate-400  md:hover:bg-white w-full text-center p-2">
             computers
           </li>
-          <li className="hover:bg-slate-400 w-full text-center p-2">
+          <li className="hover:bg-slate-400 md:hover:bg-white  w-full text-center p-2">
             accessories
           </li>
-          <li className="hover:bg-slate-400 w-full text-center p-2">shoes</li>
+          <li className="hover:bg-slate-400 md:hover:bg-white  w-full text-center p-2">
+            shoes
+          </li>
         </ul>
       </nav>
     </div>

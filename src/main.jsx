@@ -4,33 +4,42 @@ import "./index.css";
 import Layout from "./components/layouts/Layout.jsx";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import HomePage from "./pages/home-page.jsx";
-import About from "./pages/about.jsx";
-import ProductRoute from "./pages/product-page.jsx";
 import MultiProductPage from "./pages/multiProductpage.jsx";
+import LoginPage from "./pages/LoginPage.jsx";
+import RegisterUser from "./pages/registerUser.jsx";
 
 /*creating the browser router */
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/", // First definition of path
     element: <Layout />,
     children: [
-      // {
-      //   index: true,
-      //   element: <HomePage />,
-      // },
-      // {
-      //   path: "about",
-      //   element: <About />,
-      // },
+      {
+        index: true,
+        element: <HomePage />,
+      },
       {
         path: "products",
-        element: <MultiProductPage/>,
+        element: <MultiProductPage />,
+      },
+      {
+        path: "register",
+        element: <RegisterUser />,
       },
       // {
       //   path: "product/:productId",
       //   element: <ProductRoute />,
       // },
     ],
+  },
+  // the login and the signup routes are outside the layout
+  {
+    path: "login",
+    element: <LoginPage />,
+  },
+  {
+    path: "signup",
+    element: <RegisterUser />,
   },
 ]);
 
