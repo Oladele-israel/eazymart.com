@@ -73,19 +73,19 @@ const Header = () => {
           <li className="hover:bg-slate-400 md:hover:bg-white w-full text-center p-2">
             all categories
           </li>
-          <li className="hover:bg-slate-400  md:hover:bg-white w-full text-center p-2">
+          <li className="hover:bg-slate-400 hover:cursor-pointer  md:hover:bg-white w-full text-center p-2">
             phones
           </li>
-          <li className="hover:bg-slate-400 md:hover:bg-white  w-full text-center p-2">
+          <li className="hover:bg-slate-400 hover:cursor-pointer md:hover:bg-white  w-full text-center p-2">
             clothing
           </li>
-          <li className="hover:bg-slate-400  md:hover:bg-white w-full text-center p-2">
+          <li className="hover:bg-slate-400 hover:cursor-pointer  md:hover:bg-white w-full text-center p-2">
             computers
           </li>
-          <li className="hover:bg-slate-400 md:hover:bg-white  w-full text-center p-2">
+          <li className="hover:bg-slate-400 hover:cursor-pointer md:hover:bg-white  w-full text-center p-2">
             accessories
           </li>
-          <li className="hover:bg-slate-400 md:hover:bg-white  w-full text-center p-2">
+          <li className="hover:bg-slate-400 hover:cursor-pointer md:hover:bg-white  w-full text-center p-2">
             shoes
           </li>
         </ul>

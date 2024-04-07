@@ -6,7 +6,7 @@ import ProductSort from "./ProductSort";
 const ProductLayout = () => {
   return (
     <div className="h-100vh w-[100%] flex flex-row gap-9">
-      <div className="bg-slate-300 w-[22vw] h-[600px] ">
+      <div className=" w-[22vw] h-[600px] ">
         <ProductSort />
       </div>
 

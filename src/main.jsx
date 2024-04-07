@@ -7,6 +7,8 @@ import HomePage from "./pages/home-page.jsx";
 import MultiProductPage from "./pages/multiProductpage.jsx";
 import LoginPage from "./pages/LoginPage.jsx";
 import RegisterUser from "./pages/registerUser.jsx";
+import SingleProductPage from "./pages/product-page.jsx";
+import UserAccount from "./pages/userAccount.jsx";
 
 /*creating the browser router */
 const router = createBrowserRouter([
@@ -23,6 +25,14 @@ const router = createBrowserRouter([
         element: <MultiProductPage />,
       },
       {
+        path: "user",
+        element: <UserAccount />,
+      },
+      {
+        path: "product",
+        element: <SingleProductPage />,
+      },
+      {
         path: "register",
         element: <RegisterUser />,
       },
@@ -36,10 +46,6 @@ const router = createBrowserRouter([
   {
     path: "login",
     element: <LoginPage />,
-  },
-  {
-    path: "signup",
-    element: <RegisterUser />,
   },
 ]);
 
