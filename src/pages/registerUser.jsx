@@ -9,6 +9,7 @@ import vectorBg from "../assets/images/loginComponet-images/Vector 2.png";
 import finegirl from "../assets/images/loginComponet-images/pngegg (98) 1@2x.png";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { IoMdContact } from "react-icons/io";
+import { Link } from "react-router-dom";
 
 const RegisterUser = () => {
   const navigate = useNavigate();
@@ -43,7 +44,6 @@ const RegisterUser = () => {
         if (error instanceof axios.AxiosError) {
           console.log("the error => ", error?.response?.data);
         }
-        // console.log("this is the error => ", error);
       })
       .finally(() => setIsLoading(false));
   };
@@ -139,7 +139,9 @@ const RegisterUser = () => {
           <div className="flex flex-col -mt-1 p-4 items-center gap-3">
             <div className="text-lg font-semibold">
               Already have an account?
-              <span className="text-[#FF8831]"> Login</span>
+              <span className="text-[#FF8831]">
+                <Link to="/login">Login</Link>
+              </span>
             </div>
             <div>Or Sign up With</div>
             <div className="flex gap-2">
