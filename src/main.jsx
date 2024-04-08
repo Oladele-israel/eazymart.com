@@ -32,10 +32,7 @@ const router = createBrowserRouter([
         path: "product",
         element: <SingleProductPage />,
       },
-      {
-        path: "register",
-        element: <RegisterUser />,
-      },
+
       // {
       //   path: "product/:productId",
       //   element: <ProductRoute />,
@@ -46,6 +43,10 @@ const router = createBrowserRouter([
   {
     path: "login",
     element: <LoginPage />,
+  },
+  {
+    path: "register",
+    element: <RegisterUser />,
   },
 ]);
 
