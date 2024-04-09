@@ -3,6 +3,7 @@ import { useState } from "react";
 
 const AdminPage = () => {
   const [productName, setProductName] = useState("");
+  const [productColor, setProductColor] = useState("");
   const [rating, setRating] = useState();
   const [price, setPrice] = useState("");
   const [photo, setPhoto] = useState("");
@@ -21,11 +22,12 @@ const AdminPage = () => {
     e.preventDefault();
     setIsLoading(true);
     axios
-      .post("", {
+      .post("https://eazy-market-server.onrender.com/product/", {
         name: productName,
         rating: rating,
         price: price,
         photo: photo,
+        color: productColor,
         category: category,
       })
       .then((res) => {
@@ -127,6 +129,17 @@ const AdminPage = () => {
                 className="w-[40%] p-4 outline-none border rounded-lg "
                 value={rating}
                 onChange={(e) => setRating(e.target.value)}
+              />
+            </div>
+
+            <div className="flex w-full items-center bg-white rounded-md p-2 border">
+              <input
+                type="text"
+                placeholder="Product color here:"
+                required
+                className="w-[100%] p-2 outline-none "
+                value={productColor}
+                onChange={(e) => setProductColor(e.target.value)}
               />
             </div>
 
