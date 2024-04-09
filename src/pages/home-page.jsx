@@ -8,7 +8,22 @@ import { useEffect } from "react";
 
 
 const HomePage = () => {
- 
+  useEffect(() => {
+    const allProducts = async () => {
+      try {
+        const response = await axios.get("http://localhost:5000/product/", {
+          withCredentials: true,
+        });
+        console.log("the response from valid => ", response);
+      } catch (error) {
+        if (error instanceof axios.AxiosError) {
+          console.log("the error => ", error?.response?.data);
+        }
+      }
+    };
+    allProducts();
+  }, []);
+
   return (
     <div className="overflow-x-hidden">
       <HeroSection />

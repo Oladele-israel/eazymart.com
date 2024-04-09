@@ -3,9 +3,9 @@ import ProductCard from "../product-page component/product-card";
 
 const SpecialProduct = () => {
   return (
-    <div className=" w-[100vw] ml-auto mr-auto flex flex-col justify-items-center bg-slate-50 ">
-      <div className="flex justify-between w-[90%] p-8 self-center">
-        <div className="text-4xl font-bold text-black">
+    <div className=" w-[100vw] ml-auto mr-auto flex flex-col justify-items-center bg-slate-50 mb-32 ">
+      <div className="flex justify-between gap-x-3  w-[90%] p-8 self-center">
+        <div className="text-2xl md:text-4xl font-bold text-black">
           Special Offer | up to 60% off
         </div>
       </div>
@@ -18,10 +18,9 @@ const SpecialProduct = () => {
       </div>
       {/**last add banner
        */}
-      <div
-        className="w-[85%] h-[250px] bg-contain bg-no-repeat self-center mt-10"
-        style={{ backgroundImage: `url(${lastBanner})` }}
-      ></div>
+      <div className="bg-slate-300 mt-20 w-[90vw] h-10 ml-auto mr-auto">
+        <img src={lastBanner} alt="" className="h-[150px]" />
+      </div>
     </div>
   );
 };

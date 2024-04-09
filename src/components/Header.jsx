@@ -2,14 +2,16 @@ import { FaSearch } from "react-icons/fa";
 import { IoPersonOutline } from "react-icons/io5";
 import { IoCartOutline } from "react-icons/io5";
 import { FaRegHeart } from "react-icons/fa";
-import { FaCartShopping } from "react-icons/fa6";
 import { TiThMenu } from "react-icons/ti";
 import { useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import EazymartLogo from "./home-page component/EazymartLogo";
+import { AuthContext, useAuthContext } from "./context/auth-context";
 
 const Header = () => {
+  const { userDetails, message } = useAuthContext;
   const [isToggle, setIsToggle] = useState(false);
+
   const handleToggle = () => {
     setIsToggle(!isToggle);
   };
@@ -30,8 +32,15 @@ const Header = () => {
           {/**this is the account section */}
           <div className="flex items-center gap-1">
             <p className="font-semibold text-[#575454] text-[1.2rem] hidden md:block">
-              account
+              
+                  <select name="" id="">
+                    {
+                      userDetails ? message : "login!"
+                    }
+                  </select>
+            \A
             </p>
+
             <IoPersonOutline className="text-xl" />
           </div>
           {/**this is the favourite list section */}
@@ -66,9 +75,9 @@ const Header = () => {
       </header>
       <nav className=" p-4 shadow-md">
         <ul
-          className={`flex flex-col gap-5 ${
-            isToggle ? "flex" : "hidden"
-          } md:flex md:flex-row md:justify-evenly items-center capitalize font-semibold text-[#575454] text-[1.1rem]`}
+          className={`flex flex-col h-[65vh] md:h-14 md:backdrop-blur-0 backdrop-blur-md  gap-5 ${
+            isToggle ? "flex " : "hidden"
+          } md:flex md:flex-row md:justify-evenly items-center capitalize font-semibold text-black text-[1.1rem]`}
         >
           <li className="hover:bg-slate-400 md:hover:bg-white w-full text-center p-2">
             all categories

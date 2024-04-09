@@ -15,7 +15,7 @@ const Footer = () => {
     <>
       <footer className="bg-[#171616]">
         {/**footer section1 */}
-        <div className="bg-slate-100 flex justify-evenly p-6 flex-wrap items-center">
+        <div className="bg-slate-100 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-y-4 gap-x-5 items-center p-8">
           <div className="flex items-center font-bold gap-1 text-2xl">
             <FaCartShopping className="text-orange-600" />
             <p className="text-[#575454] text-2xl">Easy.Mart</p>
@@ -51,7 +51,7 @@ const Footer = () => {
         </div>
 
         {/**footer section2 */}
-        <div className="flex p-5 text-slate-100 justify-around">
+        <div className="grid gap-10 items-center grid-cols-2 md:grid-cols-3 lg:grid-cols-4 p-5 text-slate-100 justify-around">
           {/**about line */}
           <ul className="space-y-3">
             <li className="text-lg"> ABOUT</li>
@@ -118,7 +118,10 @@ const Footer = () => {
           </div>
         </div>
         {/**last section of the landing page the user attribute part*/}
-        <div className="text-zinc-400 text-center mt-12 p-7"> copyright ©2024 EasyMart.com. All rights reserved</div>
+        <div className="text-zinc-400 text-center mt-12 p-7">
+          {" "}
+          copyright ©2024 EasyMart.com. All rights reserved
+        </div>
       </footer>
     </>
   );

@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import pnegg from "../assets/images/clothing.png";
+import axios from "axios";
 const listArray = [
   {
     text: "Profile",
@@ -16,6 +17,32 @@ const listArray = [
 ];
 const UserAccount = () => {
   const [active, setActive] = useState(0);
+  useEffect(() => {
+    const allProducts = async () => {
+      try {
+        const response = await axios.get(
+          "http://localhost:5000/user/validateToken",
+          {
+            withCredentials: true,
+          }
+        );
+
+
+        console.log("the response from valid => ", response);
+        if (response?.data?.valid) {
+          setMessage(response.data.message);
+          setUserDetails(response.data.details);
+        }
+        if (!response.data) {
+          setMessage("validation of token did not work");
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    allProducts();
+  }, []);
+
   return (
     <div id="user" className="flex">
       <div className=" left-0 w-screen md:w-[25vw] bg-[rgba(249,249,249,1)] flex flex-col ">
@@ -80,7 +107,12 @@ const UserAccount = () => {
           </div>
           <div>
             <label htmlFor="adress">Address</label>
-            <input type="text" id="address" placeholder="plot 9. sumton" className=" w border border-black" />
+            <input
+              type="text"
+              id="address"
+              placeholder="plot 9. sumton"
+              className=" w border border-black"
+            />
           </div>
         </form>
       </div>
