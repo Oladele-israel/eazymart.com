@@ -6,14 +6,22 @@ import { TiThMenu } from "react-icons/ti";
 import { useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import EazymartLogo from "./home-page component/EazymartLogo";
-import { useAuthContext } from "./context/auth-context";
 import { Link } from "react-router-dom";
+import { useAuthContext } from "./context/auth-context";
 
 const Header = () => {
-  const { userDetails, message } = useAuthContext;
+  const { userDetails, error, message } = useAuthContext();
+  console.log("user details from authcontext=> ", userDetails);
+  console.log("user message from context =>", message);
   const [isToggle, setIsToggle] = useState(false);
-  console.log("this is the message =>", message);
-  console.log("this is the user detail=>", userDetails);
+
+  const handleSelectChange = (e) => {
+    const selectedOption = e.target.value;
+    console.log(selectedOption);
+  };
+
+  //getting the values of the the user and their navigation to the  respevtive pages
+
   const handleToggle = () => {
     setIsToggle(!isToggle);
   };
@@ -33,15 +41,34 @@ const Header = () => {
           </div>
           {/**this is the account section */}
           <div className="flex items-center gap-1">
-            <p className="font-semibold text-[#575454] text-[1.2rem] hidden md:block">
-              <select name="" id="">
-                <option value="">
-                  {userDetails ? message : <Link to="/login">login</Link>}
-                </option>
-              </select>
-            </p>
-
             <IoPersonOutline className="text-xl" />
+<<<<<<< HEAD
+            {message === "Authorized" && userDetails.isAdmin === false ? (
+              <select onChange={handleSelectChange}>
+                <option value="">Hi {userDetails.name}</option>
+                <option value="">LogOut</option>
+              </select>
+            ) : message === "Authorized" && userDetails.isAdmin === true ? (
+              <select
+                className="text-xl p-3 bg-transparent outline-none"
+                onChange={handleSelectChange}
+              >
+                <option value="">Hi {userDetails.name}</option>
+                <option value="">
+                  <Link to="/Admin">Check products</Link>
+                </option>
+                <option value="">LogOut</option>
+              </select>
+            ) : (
+              "login"
+            )}
+=======
+            <Link to={"/register"}>
+              <p className="font-semibold text-[#575454] text-[1.2rem] hidden md:block">
+                Sign Up
+              </p>
+            </Link>
+>>>>>>> 13de60de2877eea39812274bbc7490ea59e34636
           </div>
           {/**this is the favourite list section */}
           <div className="flex items-center gap-1  ">
@@ -108,3 +135,10 @@ export default Header;
 //doubt
 //discourage
 //dillusion
+//<Link to={"/register"}>
+{
+  /* <p className="font-semibold text-[#575454] text-[1.2rem] hidden md:block">
+Sign Up
+</p>
+</Link> */
+}

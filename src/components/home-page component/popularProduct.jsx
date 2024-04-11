@@ -1,5 +1,5 @@
+import { useProductContext } from "../context/product-context";
 import ProductCard from "../product-page component/product-card";
-import { useProductContext } from "../context/auth-context";
 import { Link } from "react-router-dom";
 
 const PopularProduct = () => {
@@ -30,7 +30,7 @@ const PopularProduct = () => {
                 imgUrl={item.photo}
                 name={item.name}
                 rating={item.rating}
-                key={item.id}
+                key={item._id}
                 price={item.price}
                 id={item._id}
               />

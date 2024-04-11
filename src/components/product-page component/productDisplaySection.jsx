@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import { useProductContext } from "../context/auth-context";
+import { useState } from "react";
 import ProductCard from "./product-card";
+import { useProductContext } from "../context/product-context";
 
 const ProductDisplaySection = ({ selectValue, selectedOption }) => {
   const { product, loading } = useProductContext();
