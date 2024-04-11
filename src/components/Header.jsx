@@ -33,15 +33,12 @@ const Header = () => {
           </div>
           {/**this is the account section */}
           <div className="flex items-center gap-1">
-            <p className="font-semibold text-[#575454] text-[1.2rem] hidden md:block">
-              <select name="" id="">
-                <option value="">
-                  {userDetails ? message : <Link to="/login">login</Link>}
-                </option>
-              </select>
-            </p>
-
             <IoPersonOutline className="text-xl" />
+            <Link to={"/register"}>
+              <p className="font-semibold text-[#575454] text-[1.2rem] hidden md:block">
+                Sign Up
+              </p>
+            </Link>
           </div>
           {/**this is the favourite list section */}
           <div className="flex items-center gap-1  ">
