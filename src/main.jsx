@@ -11,8 +11,8 @@ import SingleProductPage from "./pages/product-page.jsx";
 import UserAccount from "./pages/userAccount.jsx";
 import AdminPage from "./pages/adminPage.jsx";
 import {
-  AuthContext,
   AuthContextProvider,
+  ProductContextProvider,
 } from "./components/context/auth-context.jsx";
 
 /*creating the browser router */
@@ -29,44 +29,34 @@ const router = createBrowserRouter([
         path: "products",
         element: <MultiProductPage />,
       },
+   
       {
-        path: "user",
-        element: <UserAccount />,
-      },
-      {
-        path: "product",
+        path: "/product/:productId",
         element: <SingleProductPage />,
       },
-
-      // {
-      //   path: "product/:productId",
-      //   element: <ProductRoute />,
-      // },
     ],
   },
   // the login and the signup routes are outside the layout
   {
-    path: "login",
+    path: "/login",
     element: <LoginPage />,
   },
   {
-    path: "register",
+    path: "/register",
     element: <RegisterUser />,
   },
   {
-    path: "Admin",
+    path: "/Admin",
     element: <AdminPage />,
-  },
-  {
-    path: "test",
-    element: <AuthContext />,
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <AuthContextProvider>
-      <RouterProvider router={router} />
+      <ProductContextProvider>
+        <RouterProvider router={router} />
+      </ProductContextProvider>
     </AuthContextProvider>
   </React.StrictMode>
 );

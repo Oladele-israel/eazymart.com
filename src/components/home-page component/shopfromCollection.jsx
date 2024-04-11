@@ -16,7 +16,7 @@ const ShopCollection = () => {
         </button>
       </div>
       {/*product display */}
-      <div className="grid gap-y-3 grid-cols-2 justify-center ml-auto mr-auto">
+      <div className="bg-orange-50 grid gap-y-3 gap-x-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-center ml-auto mr-auto">
         <CollectionCard imgSrc={phones} colname="phones" />
         <CollectionCard imgSrc={accessories} colname="Accessories" />
         <CollectionCard imgSrc={computers} colname="Computers" />

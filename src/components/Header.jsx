@@ -6,39 +6,39 @@ import { TiThMenu } from "react-icons/ti";
 import { useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import EazymartLogo from "./home-page component/EazymartLogo";
-import { AuthContext, useAuthContext } from "./context/auth-context";
+import { useAuthContext } from "./context/auth-context";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const { userDetails, message } = useAuthContext;
   const [isToggle, setIsToggle] = useState(false);
-
+  console.log("this is the message =>", message);
+  console.log("this is the user detail=>", userDetails);
   const handleToggle = () => {
     setIsToggle(!isToggle);
   };
   return (
-    <div className="w-full h-[11rem] ">
+    <div className="w-screen h-[11rem] ">
       <header>
         <div className="w-[100%] flex flex-row bg-slate-50 p-3 justify-evenly ml-auto mr-auto">
           <EazymartLogo />
           {/**this is the search bar */}
-          <div className="flex items-center border-2 border-slate-300 rounded-lg w-[14rem] sm:w-[20rem] md:w-[20rem] p-2 justify-between">
+          <div className="flex items-center ml-4 border-0 md:border-2 md:border-slate-300 rounded-lg w-[14rem] sm:w-[20rem] md:w-[20rem] p-2 justify-between">
             <input
               type="text"
               placeholder="search"
-              className="bg-transparent w-[70%]border-none outline-none  "
+              className="bg-transparent w-[70%]border-none outline-none hidden md:block "
             />
             <FaSearch className="text-orange-600 " />
           </div>
           {/**this is the account section */}
           <div className="flex items-center gap-1">
             <p className="font-semibold text-[#575454] text-[1.2rem] hidden md:block">
-              
-                  <select name="" id="">
-                    {
-                      userDetails ? message : "login!"
-                    }
-                  </select>
-            \A
+              <select name="" id="">
+                <option value="">
+                  {userDetails ? message : <Link to="/login">login</Link>}
+                </option>
+              </select>
             </p>
 
             <IoPersonOutline className="text-xl" />

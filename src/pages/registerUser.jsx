@@ -13,7 +13,7 @@ import { Link } from "react-router-dom";
 
 const RegisterUser = () => {
   const navigate = useNavigate();
-  //   const base_url = import.meta.env.VITE_API_BASE_URL;
+  const base_url = import.meta.env.VITE_API_BASE_URL;
   const [name, setName] = useState("");
   const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
@@ -31,7 +31,7 @@ const RegisterUser = () => {
     e.preventDefault();
     setIsLoading(true);
     axios
-      .post("http://localhost:5000/user/signup", {
+      .post(`${base_url}/user/signup`, {
         name: name,
         username: userName,
         email: email,
@@ -39,6 +39,7 @@ const RegisterUser = () => {
       })
       .then((res) => {
         console.log("the signup sussess response => ", res);
+        navigate("/login");
       })
       .catch((error) => {
         if (error instanceof axios.AxiosError) {
@@ -49,13 +50,13 @@ const RegisterUser = () => {
   };
   return (
     <div className="bg-slate-50 w-[90vw] h-[95vh] m-auto mt-1 rounded-xl flex">
-      <div className="w-[50%] h-[100%] overflow-y-hidden relative">
+      <div className=" w-[100%] md:w-[50%] h-[100%] overflow-y-hidden relative hidden sm:hidden md:block">
         <img src={vectorBg} alt="" className="" />
         <img src={finegirl} alt="" className="absolute top-52 " />
         {/* <img src={finegirl} alt="" /> */}
       </div>
       {/*second div for the form */}
-      <div className="w-[50%] flex flex-col items-center gap-2 ">
+      <div className=" w-[100%]  md:w-[50%] flex flex-col items-center gap-2 ">
         <div className="mt-5 p-2 w-48  ml-[300px]">
           <EazymartLogo />
         </div>
@@ -65,7 +66,7 @@ const RegisterUser = () => {
           className="mt-2 flex flex-col w-[80%]"
           onSubmit={handleSubmit}
         >
-          <div className=" flex flex-col">
+          <div className=" flex flex-col  ">
             <span className="text-2xl font-bold">Sign Up</span>
             <span className="text-lg font-semi-bold mt-2 w-96">
               Creating an account gives you a more apealing shopping experience
@@ -129,10 +130,14 @@ const RegisterUser = () => {
               </div>
             </div>
             <button
-              className="w-[100%] p-3 bg-[#FF8831] text-white  rounded-md text-xl font-semibold"
+              className={
+                isLoading
+                  ? " bg-gray-300 px-5 py-2 rounded-md font-medium disabled:opacity-40 disabled:cursor-not-allowed"
+                  : "w-[100%] p-3 bg-[#FF8831] text-white  rounded-md text-xl font-semibold"
+              }
               type="submit"
             >
-              Create Account
+              {isLoading ? "loading...." : "Create Account"}
             </button>
           </div>
           {/*this is the query section */}

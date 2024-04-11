@@ -37,6 +37,7 @@ const AdminPage = () => {
         setPrice("");
         setPhoto("");
         setCategory("");
+        setProductColor("");
       })
       .catch((error) => {
         if (error instanceof axios.AxiosError) {
@@ -100,17 +101,6 @@ const AdminPage = () => {
                 <option value="shoes">shoes</option>
               </select>
             </div>
-
-            {/* <div className="flex w-full items-center bg-white rounded-md p-2 border">
-              <input
-                type="text"
-                placeholder="Image url here:"
-                required
-                className="w-[100%] p-2 outline-none "
-                value={category}
-                onChange={(e) => setCategory(e.target.value)}
-              />
-            </div> */}
 
             <div className="flex justify-between">
               <input
