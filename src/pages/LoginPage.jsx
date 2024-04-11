@@ -12,7 +12,7 @@ import { RiLockPasswordFill } from "react-icons/ri";
 
 const LoginForm = () => {
   const navigate = useNavigate();
-   const base_url = import.meta.env.VITE_API_BASE_URL;
+  const base_url = "http://localhost:5000";
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);

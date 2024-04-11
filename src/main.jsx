@@ -8,12 +8,10 @@ import MultiProductPage from "./pages/multiProductpage.jsx";
 import LoginPage from "./pages/LoginPage.jsx";
 import RegisterUser from "./pages/registerUser.jsx";
 import SingleProductPage from "./pages/product-page.jsx";
-import UserAccount from "./pages/userAccount.jsx";
 import AdminPage from "./pages/adminPage.jsx";
-import {
-  AuthContextProvider,
-  ProductContextProvider,
-} from "./components/context/auth-context.jsx";
+
+import { ProductContextProvider } from "./components/context/product-context.jsx";
+import { AuthContextProvider } from "./components/context/auth-context.jsx";
 
 /*creating the browser router */
 const router = createBrowserRouter([
@@ -29,7 +27,7 @@ const router = createBrowserRouter([
         path: "products",
         element: <MultiProductPage />,
       },
-   
+
       {
         path: "/product/:productId",
         element: <SingleProductPage />,

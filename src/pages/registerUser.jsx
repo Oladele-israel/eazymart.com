@@ -13,7 +13,6 @@ import { Link } from "react-router-dom";
 
 const RegisterUser = () => {
   const navigate = useNavigate();
-  const base_url = import.meta.env.VITE_API_BASE_URL;
   const [name, setName] = useState("");
   const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
@@ -31,7 +30,7 @@ const RegisterUser = () => {
     e.preventDefault();
     setIsLoading(true);
     axios
-      .post(`${base_url}/user/signup`, {
+      .post("http://localhost:5000/user/signup", {
         name: name,
         username: userName,
         email: email,

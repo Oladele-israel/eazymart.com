@@ -12,7 +12,7 @@ const SingleProductPage = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       const response = await axios.get(
-        `https://eazy-market-server.onrender.com/product/${productId}`
+        `http://localhost:5000/product/${productId}`
       );
       const productData = response.data.product;
       console.log("this is the single product ", productData);

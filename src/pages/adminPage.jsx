@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
+import { useParams } from "react-router-dom";
 
 const AdminPage = () => {
   const [productName, setProductName] = useState("");
@@ -10,6 +11,7 @@ const AdminPage = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [category, setCategory] = useState("");
 
+  // const userId = useParams()
   //consolelog to check
 
   //   console.log(productName);
