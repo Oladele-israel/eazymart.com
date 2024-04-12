@@ -42,6 +42,7 @@ const Header = () => {
           {/**this is the account section */}
           <div className="flex items-center gap-1">
             <IoPersonOutline className="text-xl" />
+<<<<<<< HEAD
             {message === "Authorized" && userDetails.isAdmin === false ? (
               <select onChange={handleSelectChange}>
                 <option value="">Hi {userDetails.name}</option>
@@ -61,6 +62,13 @@ const Header = () => {
             ) : (
               "login"
             )}
+=======
+            <Link to={"/register"}>
+              <p className="font-semibold text-[#575454] text-[1.2rem] hidden md:block">
+                Sign Up
+              </p>
+            </Link>
+>>>>>>> 13de60de2877eea39812274bbc7490ea59e34636
           </div>
           {/**this is the favourite list section */}
           <div className="flex items-center gap-1  ">
